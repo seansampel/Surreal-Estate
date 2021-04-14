@@ -1,26 +1,23 @@
 import React from 'react';
-import { Route } from "react-router-dom";
+import { route } from 'react-router-dom';
 import Navbar from './navbar';
+
 
 import '../styles/app.css';
 
-<BrowserRouter>
-const App = () => <Add Property />
+const App = () => {
 
-render() {
-        return (
 
-  <div className="App">
-    <Navbar />
-  </div>;
 
-  <Switch>
-        <Route exact path="/" component={Properties} />
-  </Switch>
-  
-  <App />
-</BrowserRouter>
-        )
-      };
+  return (
+
+    <div className="App">
+      <header>
+      <Navbar />
+      </header>
+    </div>    
+      );
+};
+
 
 export default App;

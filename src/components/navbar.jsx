@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from '../components/FAVPNG_logo.PNG';
-
 import '../styles/navbar.css';
+import houselogo from '../houselogo.png';
 
-const Navbar = props => {
+
+const Navbar = (props) => {
+
   return (
-    <div className="Nav">
-      <form>
-        <img src={logo} className="logo" />;
-        <ul>
-          <link className="item" to="item">
-            View Properties
-          </link>
-          <br />
-          <link className="item" to="item">
-            Add Properties
-          </link>
+    <div className="navbar">
+        <img src={houselogo} alt="house-logo" />
+        <h1>Surreal Estate</h1>
+        <ul className="navbar-links">
+        <li>View Properties</li>
+        <li>Add Properties</li>
         </ul>
-        <button>View</button>
-        <br />
-        <button>Add</button>
-      </form>
     </div>
   );
 };

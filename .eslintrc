@@ -2,6 +2,8 @@
   "extends": ["airbnb", "plugin:react/recommended", "plugin:prettier/recommended"],
   "plugins": ["react", "import", "prettier", "jsx-a11y"],
   "env": {
+    "browser": true,
+    "es2020": true,
     "jest": true
   },
   "settings": {
@@ -11,7 +13,13 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "react/jsx-props-no-spreading": "off",
-    "react/no-array-index-key": "off"
+    "no-underscore-dangle": [0],
+    "react/jsx-props-no-spreading": [0],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ]
   }
 }

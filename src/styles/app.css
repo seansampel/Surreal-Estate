@@ -1,11 +1,7 @@
 .body {
   font-family: 'Nunito', sans-serif;
-  background-color: rgb(209, 192, 192);
+  background-color: rgb(255, 255, 255);
   padding: 0em;
   margin: 0em;
 }
 
-.App-houselogo {
-  height: 25vmin;
-  pointer-events: none;
-}

@@ -7,11 +7,11 @@
   padding-left: 5%;
 } */
 .Add-Property {
-  background-color: rgb(255, 254, 254);
+  background-color: white;
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
-  margin: 50px;
+  margin: 8px;
   margin-left: 150px;
   margin-right: 150px;
   padding: 80px;
@@ -20,6 +20,5 @@
   padding-right: 10px;
   font-size: 9px;
   list-style-type: none;
-  border-radius: 8px;
-   
+  border-radius: 8px;  
 }

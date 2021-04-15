@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
-import '../styles/AddProperty.css'
+import '../styles/AddProperty.css';
 
 const AddProperty = () => {
-    const initialState = {
-      fields: {
+  const initialState = {
+    fields: {
       title: '',
     },
   };
 
-const [fields, setFields] = useState(initialState.fields);
+  // eslint-disable-next-line
+  const [fields, setFields] = useState(initialState.fields);
 
-  
-  
-  return  (
+  const handleAddProperty = (event) => {
+    event.preventDefault();
+    console.log(fields);
+  };
+
+  return (
     <div className="Add-Property">
-      <form>
-      <button type="submit">Add</button>
+      <form onSubmit={handleAddProperty}>
+        <button type="submit">Add</button>
       </form>
       <div><p>Hello</p></div>
     </div>
-  )
-  }
-
+  );
+};
 
 export default AddProperty;

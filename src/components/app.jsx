@@ -6,27 +6,18 @@ import AddProperty from './addproperty';
 
 import '../styles/app.css';
 
-const App = () => {
+const App = () => (
 
-
-
-  return (
-
-    <div className="App">
-      <header>
+  <div className="App">
+    <header>
       <Navbar />
-        <Switch>
-        <Route path="/">
-            <Properties />
-          </Route>
-          <Route path="/add-property">
-            <AddProperty />
-          </Route>
-        </Switch>
-      </header>
-    </div>    
-      );
-};
-
+      <Switch>
+        <Route exact path="/" component={Properties} />
+        <Route exact path="/add-property" component={AddProperty} />
+        <AddProperty />
+      </Switch>
+    </header>
+  </div>
+);
 
 export default App;

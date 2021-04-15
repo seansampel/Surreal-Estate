@@ -1,8 +1,25 @@
-.Add-Property {
+/* .Add-Property {
   font-family: Nunito;
   size: 60px;
   color: black;
   height:50;
   width: 250px;
   padding-left: 5%;
+} */
+.Add-Property {
+  background-color: rgb(255, 254, 254);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgb(38 38 48 / 20%);
+  margin: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 80px;
+  padding-bottom: 10%;
+  padding-left: 15px;
+  padding-right: 10px;
+  font-size: 9px;
+  list-style-type: none;
+  border-radius: 8px;
+   
 }

@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const Properties = () => (
-  <Fragment>
+
+  <div>
     Properties Page
-  </Fragment>
-  );
+  </div>
+);
 
 export default Properties;

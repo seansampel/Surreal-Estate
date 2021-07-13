@@ -22,3 +22,9 @@
   list-style-type: none;
   border-radius: 8px;  
 }
+.title {
+  font-family: Nunito;
+  font-size: 1.8em;
+  padding-left: 15%;  
+  padding-top: 2%;
+}

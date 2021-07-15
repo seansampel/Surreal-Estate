@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/AddProperty.css';
+import Axios from 'axios';
+// import Alert from '../../components/Alert';
 
 const AddProperty = () => {
   const initialState = {
@@ -10,12 +12,20 @@ const AddProperty = () => {
     },
   };
 
-  // eslint-disable-next-line
+  // eslint-disable-next-line-State hook is applied
+
   const [fields, setFields] = useState(initialState.fields);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(fields);
+
+    // Axios request - includes localhost address and fields as the main object that is being added to DB
+
+    Axios
+      .post('http://localhost:3000/api/v1/PropertyListing', fields)
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   const handleFieldChange = (event) => {
@@ -40,7 +50,6 @@ const AddProperty = () => {
               <option value="Liverpool">Liverpool</option>
             </select>
           </label>
-          <button type="submit">Add</button>
           <br />
           <label htmlFor="Type">
             Property description
@@ -68,7 +77,6 @@ const AddProperty = () => {
                 <option value="Bungalow">Bungalow</option>
               </select>
             </label>
-            <button type="submit">Add</button>
             <br />
             <label htmlFor="Bedrooms">
               Bedrooms
@@ -85,7 +93,6 @@ const AddProperty = () => {
               </select>
             </label>
           </label>
-          <button type="submit">Add</button>
           <br />
           <label htmlFor="Bathrooms">
             Bathrooms
@@ -99,18 +106,16 @@ const AddProperty = () => {
               <option value="2+">2+</option>
             </select>
           </label>
-          <button type="submit">Add</button>
           <br />
           <label htmlFor="Price">
             Price
             <input
-              id="email"
-              name="email"
+              id="price"
+              name="price"
               value={fields.price}
               onChange={handleFieldChange}
             />
           </label>
-          <button type="submit">Add</button>
           <br />
           <label htmlFor="Email">
             Email

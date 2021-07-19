@@ -1,30 +1,48 @@
 import React, { useState } from 'react';
 import '../styles/AddProperty.css';
 import Axios from 'axios';
-// import Alert from '../../components/Alert';
+import Alert from './alert';
 
 const AddProperty = () => {
   const initialState = {
     fields: {
+      bedrooms: 0,
+      bathrooms: 0,
+      region: 'North West',
+      image: '',
+      email: '',
+      price: 0,
       title: '',
-      city: '',
       type: '',
+    },
+    alert: {
+      message: '',
+      isSuccess: false,
     },
   };
 
-  // eslint-disable-next-line-State hook is applied
+  // eslint-disable-next-line-useState hook is applied
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-
-    // Axios request - includes localhost address and fields as the main object that is being added to DB
+    setAlert({ message: '', isSuccess: false });
 
     Axios
       .post('http://localhost:3000/api/v1/PropertyListing', fields)
-      .then((res) => {
-        console.log(res);
+      .then(() => {
+        setAlert({
+          message: 'Property Added',
+          isSuccess: true,
+        });
+      })
+      .catch(() => {
+        setAlert({
+          message: 'Server error. Please try again later.',
+          isSuccess: false,
+        });
       });
   };
 
@@ -36,6 +54,7 @@ const AddProperty = () => {
     <div className="Add-Property">
       <div className="title">
         <form onSubmit={handleAddProperty} htmlFor="title">
+          <Alert message={alert.message} success={alert.isSuccess} />
           <label htmlFor="title">
             City
             <select
